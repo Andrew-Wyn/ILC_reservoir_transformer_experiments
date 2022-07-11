@@ -1,0 +1,20 @@
+python run_glue.py \
+--model_name_or_path mlm_run_UBERT \
+--output_dir mnli_run_UBERT \
+--task_name mnli \
+--do_train \
+--do_eval \
+--max_seq_length 256 \
+--per_device_train_batch_size 32 \
+--per_device_eval_batch_size 8 \
+--num_train_epochs 4 \
+--learning_rate 2e-5 \
+--cache_dir hf_cache \
+--seed 2147483647 \
+--ddp_find_unused_parameters False \
+--eval_accumulation_steps 500 \
+--logging_steps 500 \
+--eval_steps 500 \
+--logging_first_step True \
+--evaluation_strategy steps \
+--save_steps 4000 \
